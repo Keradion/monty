@@ -11,17 +11,18 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	int arg_value = 0; /* to hold return value of atoi */
+	char *str = global_var.token2;
 	stack_t *new = NULL;
-
-		if (global_var.token2 != NULL)
-			arg_value = atoi(global_var.token2); /* convert that argument to int */
-
-	if (global_var.token2 == NULL)
+	
+	if (global_var.token2 != NULL)
+		arg_value = atoi(token2);
+	for (; *str != '\0'; str++)
 	{
-		/* if the argument cant be converted to int or no argument given */
-
-		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+		if (!isdigit(*str) && *str != '-')
+		{
+		       	fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+		       	exit(EXIT_FAILURE);
+		}
 	}
 
 	new = malloc(sizeof(stack_t)); /*stack node creation */
