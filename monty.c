@@ -42,6 +42,9 @@ int main(int argc, char *argv[])
 	while ((get_line = getline(&buffer, &size, fd)) != -1)
 	{
 		line_number++;
+		if (get_line == 1)
+			continue;
+
 		token1 = strtok(buffer, " \t\n");
 		global_var.token2 = strtok(NULL, " \t\n");
 
