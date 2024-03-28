@@ -46,11 +46,13 @@ typedef struct instruction_s
  * Description:  since no more than 1 global varibale global hold those
  * variables needed in multiple files
  */
-struct global
+typedef struct global
 {
 	char *token2;
 	stack_t *stack;
-} global_var; 
+} global;
+
+extern global global_var;
 
 void validate_opcode(char *opcode, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);

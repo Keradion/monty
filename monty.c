@@ -12,11 +12,12 @@
  * Return: 1 on success
  */
 
+global global_var;
+
 int main(int argc, char *argv[])
 {
 	/* if the user does not give any file */
 	/* if the user provide more than one argument */
-
 	FILE *fd = NULL;
 	char *buffer = NULL;
 	size_t size = 0;
@@ -25,6 +26,8 @@ int main(int argc, char *argv[])
 	char *token1 = NULL;
 
 	global_var.stack = NULL;
+	global_var.token2 = NULL;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: %s file \n", argv[0]);
