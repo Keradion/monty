@@ -14,7 +14,8 @@ void validate_opcode(char *opcode, unsigned int line_number)
 	int i = 0;
 
 	instruction_t instructions[] = {
-		{"push", push}
+		{"push", push},
+		{"pall", pall}
 	};
 
 	for (i = 0; i < 2; i++)

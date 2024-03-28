@@ -39,13 +39,13 @@ void push(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		*stack = new;
+		return;
 	}
 
 	new->next = (*stack);
 	(*stack)->prev = new;
 	(*stack) = new;
 
-	printf("%d", (*stack)->n);
-
+	return;
 
 }
