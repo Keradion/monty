@@ -14,8 +14,12 @@ void push(stack_t **stack, unsigned int line_number)
 	char *str = global_var.token2;
 	stack_t *new = NULL;
 	
-	if (global_var.token2 != NULL)
-		arg_value = atoi(global_var.token2);
+	if (global_var.token2 == NULL)
+	{
+		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+		
 	for (; *str != '\0'; str++)
 	{
 		if (!isdigit(*str) && *str != '-')
@@ -24,6 +28,8 @@ void push(stack_t **stack, unsigned int line_number)
 		       	exit(EXIT_FAILURE);
 		}
 	}
+
+	arg_value = atoi(global_var.token2);
 
 	new = malloc(sizeof(stack_t)); /*stack node creation */
 
