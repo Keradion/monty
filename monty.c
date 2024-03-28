@@ -4,9 +4,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-char *token2 = NULL;
-char *token1 = NULL;
-stack_t *stack;
 /**
  * main - main fucntion
  * @argc: number of arguments
@@ -15,7 +12,7 @@ stack_t *stack;
  * Return: 1 on success
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	/* if the user does not give any file */
 	/* if the user provide more than one argument */
@@ -25,13 +22,13 @@ int main (int argc, char *argv[])
 	size_t size = 0;
 	int get_line = 0;
 	unsigned int line_number = 0;
-	stack = NULL;
+	char *token1 = NULL;
 
-
-	if (argc < 2 || argc > 2)
+	global_var.stack = NULL;
+	if (argc != 2)
 	{
-	       fprintf(stderr, "USAGE: %s file \n", argv[0]);	
-	       exit(EXIT_FAILURE);
+		fprintf(stderr, "USAGE: %s file \n", argv[0]);
+		exit(EXIT_FAILURE);
 	}
 
 	fd = fopen(argv[1], "r");
@@ -45,12 +42,10 @@ int main (int argc, char *argv[])
 	while ((get_line = getline(&buffer, &size, fd)) != -1)
 	{
 		line_number++;
-		
 		token1 = strtok(buffer, " \t\n");
-		token2 = strtok(NULL," \t\n");
+		global_var.token2 = strtok(NULL, " \t\n");
 
 		validate_opcode(token1, line_number);
-	
 	}
 
 

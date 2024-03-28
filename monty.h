@@ -37,8 +37,6 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-struct global 
-{
 /**
  * global - hold variables that used in multiple files 
  * token2: holds the item value to he pushed into stack/queue 
@@ -47,8 +45,10 @@ struct global
  * Description:  since no more than 1 global varibale global hold those
  * variables needed in multiple files
  */
-   char *token2;
-   stack_t *stack;
+struct global
+{
+	char *token2;
+	stack_t *stack;
 } global_var; 
 
 void validate_opcode(char *opcode, unsigned int line_number);

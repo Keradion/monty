@@ -22,7 +22,7 @@ void validate_opcode(char *opcode, unsigned int line_number)
 	{
 		if ((strcmp(opcode, instructions[i].opcode)) == 0)
 		{
-			instructions[i].f(&stack, line_num);
+			instructions[i].f(&global_var.stack, line_num);
 			return;
 		}
 	}

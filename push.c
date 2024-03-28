@@ -13,10 +13,10 @@ void push(stack_t **stack, unsigned int line_number)
 	int arg_value = 0; /* to hold return value of atoi */
 	stack_t *new = NULL;
 
-	if (token2 != NULL) /* check if there is an argument given to push */
-		arg_value = atoi(token2); /* convert that argument to int */
+		if (global_var.token2 != NULL)
+			arg_value = atoi(global_var.token2); /* convert that argument to int */
 
-	if (token2 == NULL || arg_value == 0)
+	if (global_var.token2 == NULL)
 	{
 		/* if the argument cant be converted to int or no argument given */
 
@@ -36,15 +36,15 @@ void push(stack_t **stack, unsigned int line_number)
 	new->prev = NULL;
 	new->next = NULL;
 
-	if (*stack == NULL)
+	if (global_var.stack == NULL)
 	{
 		*stack = new;
 		return;
 	}
 
-	new->next = (*stack);
-	(*stack)->prev = new;
-	(*stack) = new;
+	new->next = (global_var.stack);
+	(global_var.stack)->prev = new;
+	(global_var.stack) = new;
 
 	return;
 
