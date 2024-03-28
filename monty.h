@@ -39,8 +39,8 @@ typedef struct instruction_s
 
 extern char *token1;
 extern char *token2;
-
-void validate_opcode(stack_t **stack, char *opcode, unsigned int line_number);
+extern stack_t *stack;
+void validate_opcode(char *opcode, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 
 #endif

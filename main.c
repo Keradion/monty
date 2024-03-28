@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -6,6 +6,7 @@
 
 char *token2 = NULL;
 char *token1 = NULL;
+stack_t *stack;
 /**
  * main - main fucntion
  * @argc: number of arguments
@@ -24,7 +25,7 @@ int main (int argc, char *argv[])
 	size_t size = 0;
 	int get_line = 0;
 	unsigned int line_number = 0;
-	stack_t **stack = NULL;
+	stack = NULL;
 
 
 	if (argc < 2 || argc > 2)
@@ -48,7 +49,7 @@ int main (int argc, char *argv[])
 		token1 = strtok(buffer, " \t\n");
 		token2 = strtok(NULL," \t\n");
 
-		validate_opcode(stack,token1, line_number);
+		validate_opcode(token1, line_number);
 	
 	}
 
