@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
 	char *token1 = NULL;
 
 	global_var.stack = NULL;
-	global_var.token2 = NULL;
 
 	if (argc != 2)
 	{
