@@ -44,8 +44,9 @@ struct global
  * token2: holds the item value to he pushed into stack/queue 
  * stack: pointer to the head node of the stack list 
  * 
- * Description:  since no more than 1 global varibaleglobal hold those
-*/
+ * Description:  since no more than 1 global varibale global hold those
+ * variables needed in multiple files
+ */
    char *token2;
    stack_t *stack;
 } global_var; 
