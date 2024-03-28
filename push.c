@@ -15,7 +15,7 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *new = NULL;
 	
 	if (global_var.token2 != NULL)
-		arg_value = atoi(token2);
+		arg_value = atoi(global_var.token2);
 	for (; *str != '\0'; str++)
 	{
 		if (!isdigit(*str) && *str != '-')
