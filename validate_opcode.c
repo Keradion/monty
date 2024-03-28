@@ -16,11 +16,13 @@ void validate_opcode(stack_t **stack, char *opcode, unsigned int line_number)
 		{"push", push}
 	};
 
-	for (i = 0; i < 1; i++)
+	for (i = 0; i < 2; i++)
 	{
 		if ((strcmp(opcode, instructions[i].opcode)) == 0)
+		{
 			instructions[i].f(stack, line_num);
-		return;
+			return;
+		}
 	}
 	
 	fprintf(stderr,"L<%d>: unknown instruction <%s>\n", line_number, opcode);

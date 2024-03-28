@@ -1,8 +1,6 @@
-push -1
-pop
+push 1
+push -1 
+push 9
 pint 
-pall 
-push 2 
-push 1 
-push 3
-push g
+push 2
+push 2

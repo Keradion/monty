@@ -36,7 +36,7 @@ int main (int argc, char *argv[])
 	fd = fopen(argv[1], "r");
 	if (fd == NULL)
 	{
-		fprintf(stderr, "USAGE: %s file\n", argv[0]);
+		fprintf(stderr, "Error: can't open file <%s>\n", argv[1]);
 		exit(EXIT_FAILURE);
 
 	}
