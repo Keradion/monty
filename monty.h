@@ -19,9 +19,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -34,17 +34,16 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
- * global - hold variables that used in multiple files 
- * token2: holds the item value to he pushed into stack/queue 
- * stack: pointer to the head node of the stack list 
- * 
- * Description:  since no more than 1 global varibale global hold those
- * variables needed in multiple files
+ * struct global - struct type
+ * @token2: holds item value
+ * @stack: pointer to the head node of the stack list
+ *
+ * Description: variables used in multiple files
  */
 typedef struct global
 {
