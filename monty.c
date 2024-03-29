@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
 		validate_opcode(token1, line_number);
 	}
 
+	printf("%d\n", 0);
 
 	fclose(fd);
 	return (1);
