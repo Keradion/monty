@@ -16,7 +16,7 @@ void push(stack_t **stack, unsigned int line_number)
 	
 	if (global_var.token2 == NULL)
 	{
-		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 		
@@ -24,7 +24,7 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		if ((!isdigit(*str)) && *str != '-')
 		{
-		       	fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+		       	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		       	exit(EXIT_FAILURE);
 		}
 	}
