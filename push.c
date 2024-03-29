@@ -16,7 +16,7 @@ void push(stack_t **stack, unsigned int line_number)
 	
 	if (global_var.token2 == NULL)
 	{
-		fprintf(stderr, "L%d:usage:push integer\n", line_number);
+		dprintf(2, "L%d:usage:push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 		
@@ -24,7 +24,7 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		if ((!isdigit(*str)) && *str != '-')
 		{
-		       	fprintf(stderr, "L%d:usage:push integer\n", line_number);
+		       	dprintf(2, "L%d:usage:push integer\n", line_number);
 		       	exit(EXIT_FAILURE);
 		}
 	}
@@ -35,7 +35,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (new == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
+		dprintf(2, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 
