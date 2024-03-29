@@ -10,13 +10,13 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	int arg_value = 0; /* to hold return value of atoi */
+	int arg_value = -1; /* to hold return value of atoi */
 	char *str = global_var.token2;
 	stack_t *new = NULL;
 	
 	if (global_var.token2 == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d:usage:push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 		
@@ -24,7 +24,7 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		if ((!isdigit(*str)) && *str != '-')
 		{
-		       	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		       	fprintf(stderr, "L%d:usage:push integer\n", line_number);
 		       	exit(EXIT_FAILURE);
 		}
 	}
