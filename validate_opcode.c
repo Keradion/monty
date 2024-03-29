@@ -16,10 +16,11 @@ void validate_opcode(char *opcode, unsigned int line_number)
 	instruction_t instructions[] = {
 		{"push", push},
 		{"pall", pall},
-		{"pint", pint}
+		{"pint", pint},
+		{"pop", pop}
 	};
 
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 4; i++)
 	{
 
 		if ((strcmp(opcode, instructions[i].opcode)) == 0)
