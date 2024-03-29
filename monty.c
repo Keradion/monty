@@ -54,7 +54,6 @@ int main(int argc, char *argv[])
 	}
 
 	printf("%d\n", 0);
-
 	fclose(fd);
 	return (1);
 
