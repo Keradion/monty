@@ -21,12 +21,14 @@ void validate_opcode(char *opcode, unsigned int line_number)
 
 	for (i = 0; i < 3; i++)
 	{
+
 		if ((strcmp(opcode, instructions[i].opcode)) == 0)
 		{
 			instructions[i].f(&global_var.stack, line_num);
 			return;
 		}
 	}
-	fprintf(stderr, "L%d: unknown instruction <%s>\n", line_number, opcode);
+	fprintf(stderr, "L%d:unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
+
 }
