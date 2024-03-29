@@ -51,7 +51,7 @@ typedef struct global
 	stack_t *stack;
 } global;
 
-extern global global_var;
+extern global global_var; /* insatnce of global */
 
 void validate_opcode(char *opcode, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
