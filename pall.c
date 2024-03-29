@@ -13,7 +13,9 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned line_number)
 	stack_t *temp = *stack;
 
 	if (temp == NULL)
+	{
 		return;
+	}
 
 	while (temp != NULL)
 	{
