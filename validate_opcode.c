@@ -28,7 +28,7 @@ void validate_opcode(char *opcode, unsigned int line_number)
 			return;
 		}
 	}
-	dprintf(2, "L%d:unknown instruction %s\n", line_number, opcode);
+	dprintf(2, "L%d: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 
 }
