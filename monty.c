@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 	if (fd == NULL)
 	{
 		dprintf(2, "Error: Can't open file %s\n", argv[1]);
+		free(fd);
 		exit(EXIT_FAILURE);
 
 	}
@@ -55,6 +56,7 @@ int main(int argc, char *argv[])
 
 	free(buffer);
 	free(global_var.stack);
+	free(token1);
 	fclose(fd);
 	return (0);
 
