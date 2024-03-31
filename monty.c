@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 		global_var.token2 = strtok(NULL, " \t\n");
 		validate_opcode(token1, line_number);
 	}
-
+	_free();
 	free(buffer);
 	return (0);
 
