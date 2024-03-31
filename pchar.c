@@ -20,9 +20,14 @@ void pchar(stack_t **stack, unsigned int line_number)
 		putchar((*stack)->n);
 		printf("\n");
 	}
-	if ((*stack)->n >= 97 && (*stack)->n <= 122)
+	else if ((*stack)->n >= 97 && (*stack)->n <= 122)
 	{
 		putchar((*stack)->n);
 		printf("\n");
+	}
+	else
+	{
+		dprintf(2, "L%d: can't pchar, value out of range", line_number);
+		exit(EXIT_FAILURE);
 	}
 }
