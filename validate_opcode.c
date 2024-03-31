@@ -25,10 +25,11 @@ void validate_opcode(char *opcode, unsigned int line_number)
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
-		{"#", comment}
+		{"#", comment},
+		{"pchar", pchar}
 	};
 
-	for (i = 0; i < 13; i++)
+	for (i = 0; i < 16; i++)
 	{
 
 		if ((strcmp(opcode, instructions[i].opcode)) == 0)
