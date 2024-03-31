@@ -1,9 +1,4 @@
 #include "monty.h"
-#include <string.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-
 /**
  * main - main fucntion
  * @argc: number of arguments
@@ -12,12 +7,8 @@
  * Return: 1 on success
  */
 
-global global_var;
-
 int main(int argc, char *argv[])
 {
-	/* if the user does not give any file */
-	/* if the user provide more than one argument */
 	FILE *fd = NULL;
 	char *buffer = NULL;
 	size_t size = 0;
@@ -25,10 +16,7 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 0;
 	char *token1 = NULL;
 
-	stack_t *temp = NULL;
-
 	global_var.stack = NULL;
-
 	if (argc != 2)
 	{
 		dprintf(2, "USAGE: monty file\n");
@@ -49,27 +37,12 @@ int main(int argc, char *argv[])
 		line_number++;
 		if (get_line < 1)
 			continue;
-
 		token1 = strtok(buffer, " \t\n");
-
 		if (token1 == NULL)
 			continue;
-
 		global_var.token2 = strtok(NULL, " \t\n");
-
 		validate_opcode(token1, line_number);
 	}
-
-	/*temp= global_var.stack;
-
-	while (temp != NULL)
-	{
-		temp1 = temp;
-		temp = temp->next;
-		temp->prev = NULL;
-		temp1->next = NULL;
-		free(temp1);
-	}*/
 
 	free(temp);
 
