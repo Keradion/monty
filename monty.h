@@ -45,14 +45,12 @@ typedef struct instruction_s
  *
  * Description: variables used in multiple files
  */
-typedef struct global
+typedef struct globals 
 {
 	char *token2;
 	stack_t *stack;
-} global;
-
-extern global global_var; /* insatnce of global */
-
+} global_t;
+extern global_t global_var;
 void validate_opcode(char *opcode, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, __attribute__((unused))unsigned int line_number);

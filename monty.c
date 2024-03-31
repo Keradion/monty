@@ -1,4 +1,5 @@
 #include "monty.h"
+global_t global_var;
 /**
  * main - main fucntion
  * @argc: number of arguments
@@ -17,6 +18,7 @@ int main(int argc, char *argv[])
 	char *token1 = NULL;
 
 	global_var.stack = NULL;
+
 	if (argc != 2)
 	{
 		dprintf(2, "USAGE: monty file\n");
@@ -43,8 +45,6 @@ int main(int argc, char *argv[])
 		global_var.token2 = strtok(NULL, " \t\n");
 		validate_opcode(token1, line_number);
 	}
-
-	free(temp);
 
 	free(buffer);
 	return (0);
