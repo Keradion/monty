@@ -18,7 +18,7 @@ void mod(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->n == 0)
 	{
-		dprintf(2, "L%d, division by zero\n", line_number);
+		dprintf(2, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
