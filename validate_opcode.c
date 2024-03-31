@@ -20,10 +20,12 @@ void validate_opcode(char *opcode, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
-		{"nop", nop}
+		{"nop", nop},
+		{"sub", sub},
+		{"div", _div}
 	};
 
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < 10; i++)
 	{
 
 		if ((strcmp(opcode, instructions[i].opcode)) == 0)
