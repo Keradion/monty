@@ -45,19 +45,20 @@ int main(int argc, char *argv[])
 	while ((get_line = getline(&buffer, &size, fd)) != -1)
 	{
 		line_number++;
-		if (get_line == 1)
+		if (get_line < 1)
 			continue;
 
 		token1 = strtok(buffer, " \t\n");
+
+		if (token1 == NULL)
+			continue;
+
 		global_var.token2 = strtok(NULL, " \t\n");
 
 		validate_opcode(token1, line_number);
 	}
 
 	free(buffer);
-	free(global_var.stack);
-	free(token1);
-	fclose(fd);
 	return (0);
 
 }
