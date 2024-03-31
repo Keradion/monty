@@ -10,11 +10,11 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	int arg_value = 0 ; /* to hold return value of atoi */
+	int arg_value; /* to hold return value of atoi */
 	char *str = global_var.token2;
+	stack_t *new = *stack;
 
-	stack_t *new = NULL;
-
+	global_var.stack = *stack;
 	if (global_var.token2 == NULL)
 	{
 		dprintf(2, "L%d: usage: push integer\n", line_number);
@@ -42,7 +42,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (global_var.stack == NULL)
 	{
-		*stack = new;
+		global_var.stack = new;
 		return;
 	}
 

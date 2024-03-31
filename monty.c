@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	while ((get_line = getline(&buffer, &size, fd)) != -1)
 	{
 		line_number++;
-		if (get_line == 1)
+		if (get_line == 1 || get_line == 0)
 			continue;
 
 		token1 = strtok(buffer, " \t\n");
@@ -54,6 +54,6 @@ int main(int argc, char *argv[])
 	}
 
 	fclose(fd);
-	return (1);
+	return (0);
 
 }
