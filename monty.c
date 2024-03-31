@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	while ((get_line = getline(&buffer, &size, fd)) != -1)
 	{
 		line_number++;
-		if (get_line == 1 || get_line == 0)
+		if (get_line == 1)
 			continue;
 
 		token1 = strtok(buffer, " \t\n");
@@ -53,6 +53,8 @@ int main(int argc, char *argv[])
 		validate_opcode(token1, line_number);
 	}
 
+	free(buffer);
+	free(global_var.stack);
 	fclose(fd);
 	return (0);
 
