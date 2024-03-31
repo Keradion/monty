@@ -49,4 +49,5 @@ void push(stack_t **stack, unsigned int line_number)
 	new->next = (global_var.stack);
 	(global_var.stack)->prev = new;
 	(global_var.stack) = new;
+
 }

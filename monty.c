@@ -25,6 +25,8 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 0;
 	char *token1 = NULL;
 
+	stack_t *temp = NULL;
+
 	global_var.stack = NULL;
 
 	if (argc != 2)
@@ -57,6 +59,19 @@ int main(int argc, char *argv[])
 
 		validate_opcode(token1, line_number);
 	}
+
+	/*temp= global_var.stack;
+
+	while (temp != NULL)
+	{
+		temp1 = temp;
+		temp = temp->next;
+		temp->prev = NULL;
+		temp1->next = NULL;
+		free(temp1);
+	}*/
+
+	free(temp);
 
 	free(buffer);
 	return (0);
