@@ -6,7 +6,7 @@
  * Return: nothing
  */
 
-void _free()
+void _free(void)
 {
 	stack_t *temp = global_var.stack;
 	stack_t *temp1 = NULL;
