@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	}
 	_free();
 	free(buffer);
-	flose(fd);
+	fclose(fd);
 	return (0);
 
 }
