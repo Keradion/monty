@@ -24,7 +24,8 @@ void validate_opcode(char *opcode, unsigned int line_number)
 		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
-		{"mod", mod}
+		{"mod", mod},
+		{"#", comment}
 	};
 
 	for (i = 0; i < 13; i++)

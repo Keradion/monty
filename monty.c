@@ -40,8 +40,9 @@ int main(int argc, char *argv[])
 		if (get_line < 1)
 			continue;
 		token1 = strtok(buffer, " \t\n");
-		if (token1 == NULL)
+		if (token1 == NULL || token1[0] == '#')
 			continue;
+
 		global_var.token2 = strtok(NULL, " \t\n");
 		validate_opcode(token1, line_number);
 	}
